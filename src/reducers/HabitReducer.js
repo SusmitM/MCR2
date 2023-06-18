@@ -27,11 +27,10 @@ export const habitReducer = (habitState, action) => {
             }
         }
         case "updatedHabit":{
-            console.log(action.updatedHabit)
             
             return{
                 ...habitState,
-                AllData: habitState.AllData.map((data)=>data.id==action.uId ? {...action.updatedHabit} : data),
+                AllData: habitState.AllData.map((data)=>data.id===action.uId ? {...action.updatedHabit} : data),
                 
             }
         }
