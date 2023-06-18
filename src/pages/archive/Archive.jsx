@@ -6,6 +6,7 @@ export const Archive = () => {
   return (
    <ul>
     {
+      
     habitState.Archive.map((habit)=><li key={habit.id}>{habit.Name}</li>)
    }
    </ul>

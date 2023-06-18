@@ -1,6 +1,4 @@
-import {
-    v4 as uuidv4
-} from 'uuid';
+
 export const habitReducer = (habitState, action) => {
     switch (action.type) {
         case "addHabit": {
@@ -10,7 +8,6 @@ export const habitReducer = (habitState, action) => {
                 AllData: [...habitState.AllData, {
                     ...action.newHabit,
                     img: "https://loremflickr.com/320/240/nature",
-                    id: uuidv4()
                 }]
             }
         }
@@ -27,6 +24,15 @@ export const habitReducer = (habitState, action) => {
                 ...habitState,
                 AllData: habitState.AllData.filter(({id})=>id!==action.habitId),
                 Archive:[...habitState.Archive,selectedHabit]
+            }
+        }
+        case "updatedHabit":{
+            console.log(action.updatedHabit)
+            
+            return{
+                ...habitState,
+                AllData: habitState.AllData.map((data)=>data.id==action.uId ? {...action.updatedHabit} : data),
+                
             }
         }
 

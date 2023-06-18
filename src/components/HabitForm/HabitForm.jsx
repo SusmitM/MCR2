@@ -1,25 +1,18 @@
+/* eslint-disable no-unused-vars */
 import {useState} from 'react'
 import { useHabitContext } from '../../context/HabitContext';
 import"./HabitForm.css"
 
 export const HabitForm = () => {
 
-    const {habitDispatch,setShowAddHabit,showAddHabit,currentHabitData}=useHabitContext();
-    const repeatValues = ["Daily", "Weekly", "Monthly"];
-    const goalValues = ["1 time", "2 time", "5 time"];
-    const timeValues = ["Any Time", "Morning", "Evening", "Night"];
-    const [habitData, setHabitData] = useState({
-      Name: "",
-      Repeat: repeatValues[0],
-      Goal: goalValues[0],
-      TimeOfDay: timeValues[0],
-      StartDate: "",
-    });
+    const {habitDispatch,setShowAddHabit,showAddHabit,currentHabitData,habitData, setHabitData,repeatValues,goalValues,timeValues,editing,setediting}=useHabitContext();
+    
+   
  
   
 
     const saveHabitData=()=>{
-        if(habitData.Name.length>0 && habitData.StartDate.length>0){
+        if(habitData.Name.length>0 && habitData.StartDate.length>0 && !editing){
           habitDispatch({
             type:"addHabit",
             newHabit:habitData
@@ -27,6 +20,14 @@ export const HabitForm = () => {
         }
         else{
           alert("Invalid Form Data")
+        }
+        if(editing){
+          habitDispatch({
+            type:"updatedHabit",
+            updatedHabit:habitData,
+            uId:habitData.id
+          })
+
         }
       
         setShowAddHabit((prev) => !prev);
