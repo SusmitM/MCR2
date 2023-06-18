@@ -1,0 +1,13 @@
+.habitCard{
+    height:190px;
+    width:320px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 5px;
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+}

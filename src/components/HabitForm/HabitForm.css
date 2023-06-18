@@ -1,0 +1,9 @@
+.addPostContainer{
+    position: absolute;
+    background: aliceblue;
+    width: 350px;
+    border: 1px solid black;
+    padding: 10px;
+    top:150px
+
+}

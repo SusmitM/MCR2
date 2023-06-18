@@ -1,0 +1,8 @@
+.habitDetails{
+    position: absolute;
+    background: aliceblue;
+    height: 264px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid black;
+}
