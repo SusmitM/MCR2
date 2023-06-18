@@ -17,13 +17,7 @@ export const HabitForm = () => {
             type:"addHabit",
             newHabit:habitData
           })
-          setHabitData({
-            Name: "",
-            Repeat: repeatValues[0],
-            Goal: goalValues[0],
-            TimeOfDay: timeValues[0],
-            StartDate: "",
-          });
+          
         }
         else{
           !editing && alert("Invalid Form Data")
@@ -35,10 +29,20 @@ export const HabitForm = () => {
             uId:habitData.id
           })
           setediting(prev=>!prev)
+        
 
         }
       
         setShowAddHabit((prev) => !prev);
+        setHabitData({
+          Name: "",
+          Repeat: repeatValues[0],
+          Goal: goalValues[0],
+          TimeOfDay: timeValues[0],
+          StartDate: "",
+        });
+       
+
        
     
       }

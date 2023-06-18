@@ -25,7 +25,7 @@ export const Home = () => {
       <button onClick={()=>navigate("/archive")}>Archive Habits</button>
       {HabitDetails()}
       {HabitForm()}
-      <button
+      <button style={{marginTop:"10px"}}
         className="addHabitBtn"
         onClick={() => setShowAddHabit((prev) => !prev)}
       >
