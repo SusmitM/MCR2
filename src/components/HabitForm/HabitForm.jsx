@@ -19,7 +19,7 @@ export const HabitForm = () => {
           })
         }
         else{
-          alert("Invalid Form Data")
+          !editing && alert("Invalid Form Data")
         }
         if(editing){
           habitDispatch({
